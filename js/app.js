@@ -21,6 +21,7 @@ var seattle = {
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
         }
     },
+    
     totalAmount:function(amountOfCookies) { 
         for (var i=0 ; i< this.amountOfCookies.length ;i++){
             this.total= this.total + this.amountOfCookies[i];
