@@ -27,6 +27,7 @@ var seattle = {
             this.total= this.total + this.amountOfCookies[i];
         }
     },
+    
    
     supply: function () {
         var container = document.getElementById('seattle');
