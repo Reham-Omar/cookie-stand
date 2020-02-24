@@ -6,6 +6,7 @@ function getRandomCustmer(min, max) {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+
 var seattle = {
     name:'seattle',
     minCustPerHour: 23,
@@ -18,7 +19,12 @@ var seattle = {
     numberOfCoustmer: function () {
         for (let i = 0; i < this.hours.length; i++) {
             this.custmernumber.push(getRandomCustmer(this.minCustPerHour, this.maxCustPerHour));
+        }
+    },
+    amountOfCookie: function () {
+        for (let i = 0; i < this.hours.length; i++) {
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
+            this.amountOfCookies[i]=parseInt(this.amountOfCookies[i]);
         }
     },
     totalAmount:function(amountOfCookies) { 
@@ -46,6 +52,7 @@ var seattle = {
 };
 
 seattle.numberOfCoustmer();
+seattle.amountOfCookie();
 seattle.totalAmount();
 seattle.supply();
 console.log(seattle.custmernumber);
