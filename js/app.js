@@ -15,10 +15,11 @@ var seattle = {
     custmernumber: [],
     amountOfCookies: [],
     total: 0,
-    numberOfCoustmer: function () {
+    amountOfCookie: function () {
         for (let i = 0; i < this.hours.length; i++) {
             this.custmernumber.push(getRandomCustmer(this.minCustPerHour, this.maxCustPerHour));
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
+            this.amountOfCookies[i]=parseInt (this.amountOfCookies[i]);
         }
     },
     
@@ -47,7 +48,7 @@ var seattle = {
     }
 };
 
-seattle.numberOfCoustmer();
+seattle.amountOfCookie();
 seattle.totalAmount();
 seattle.supply();
 console.log(seattle.custmernumber);
@@ -63,10 +64,11 @@ var Tokyo = {
     custmernumber: [],
     amountOfCookies: [],
     total: 0,
-    numberOfCoustmer: function () {
+    amountOfCookie: function () {
         for (let i = 0; i < this.hours.length; i++) {
             this.custmernumber.push(getRandomCustmer(this.minCustPerHour, this.maxCustPerHour));
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
+            this.amountOfCookies[i]=parseInt (this.amountOfCookies[i]);
         }
     },
     totalAmount:function(amountOfCookies) { 
@@ -93,7 +95,7 @@ var Tokyo = {
     }
 };
 
-Tokyo.numberOfCoustmer();
+Tokyo.amountOfCookie();
 Tokyo.totalAmount();
 Tokyo.supply();
 console.log(Tokyo.custmernumber);
@@ -108,10 +110,11 @@ var Dubai = {
     custmernumber: [],
     amountOfCookies: [],
     total: 0,
-    numberOfCoustmer: function () {
+    amountOfCookie: function () {
         for (let i = 0; i < this.hours.length; i++) {
             this.custmernumber.push(getRandomCustmer(this.minCustPerHour, this.maxCustPerHour));
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
+            this.amountOfCookies[i]=parseInt (this.amountOfCookies[i]);
         }
     },
     totalAmount:function(amountOfCookies) { 
@@ -138,7 +141,7 @@ var Dubai = {
     }
 };
 
-Dubai.numberOfCoustmer();
+Dubai.amountOfCookie();
 Dubai.totalAmount();
 Dubai.supply();
 console.log(Dubai.custmernumber);
@@ -152,10 +155,11 @@ var Paris = {
     custmernumber: [],
     amountOfCookies: [],
     total: 0,
-    numberOfCoustmer: function () {
+    amountOfCookie: function () {
         for (let i = 0; i < this.hours.length; i++) {
             this.custmernumber.push(getRandomCustmer(this.minCustPerHour, this.maxCustPerHour));
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
+            this.amountOfCookies[i]=parseInt (this.amountOfCookies[i]);
         }
     },
     totalAmount:function(amountOfCookies) { 
@@ -182,7 +186,7 @@ var Paris = {
     }
 };
 
-Paris.numberOfCoustmer();
+Paris.amountOfCookie();
 Paris.totalAmount();
 Paris.supply();
 console.log(Paris.custmernumber);
@@ -197,10 +201,11 @@ var Lima = {
     custmernumber: [],
     amountOfCookies: [],
     total: 0,
-    numberOfCoustmer: function () {
+    amountOfCookie: function () {
         for (let i = 0; i < this.hours.length; i++) {
             this.custmernumber.push(getRandomCustmer(this.minCustPerHour, this.maxCustPerHour));
             this.amountOfCookies.push(this.avgNumPerCustmer * this.custmernumber[i]);
+            this.amountOfCookies[i]=parseInt (this.amountOfCookies[i]);
         }
     },
     totalAmount:function(amountOfCookies) { 
@@ -227,7 +232,7 @@ var Lima = {
     }
 };
 
-Lima.numberOfCoustmer();
+Lima.amountOfCookie();
 Lima.totalAmount();
 Lima.supply();
 console.log(Lima.custmernumber);
