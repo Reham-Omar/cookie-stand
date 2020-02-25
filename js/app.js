@@ -22,11 +22,11 @@ var seattle = {
             this.amountOfCookies[i]=parseInt (this.amountOfCookies[i]);
         }
     },
-    
+
+        
     totalAmount:function(amountOfCookies) { 
         for (var i=0 ; i< this.amountOfCookies.length ;i++){
-            this.total= this.total + this.amountOfCookies[i];
-        }
+            this.total += this.amountOfCookies[i];        }
     },
     
    
@@ -73,8 +73,7 @@ var Tokyo = {
     },
     totalAmount:function(amountOfCookies) { 
         for (var i=0 ; i< this.amountOfCookies.length ;i++){
-            this.total= this.total + this.amountOfCookies[i];
-        }
+            this.total += this.amountOfCookies[i];        }
     },
    
     supply: function () {
@@ -119,8 +118,7 @@ var Dubai = {
     },
     totalAmount:function(amountOfCookies) { 
         for (var i=0 ; i< this.amountOfCookies.length ;i++){
-            this.total= this.total + this.amountOfCookies[i];
-        }
+            this.total += this.amountOfCookies[i];        }
     },
    
     supply: function () {
@@ -164,8 +162,7 @@ var Paris = {
     },
     totalAmount:function(amountOfCookies) { 
         for (var i=0 ; i< this.amountOfCookies.length ;i++){
-            this.total= this.total + this.amountOfCookies[i];
-        }
+            this.total += this.amountOfCookies[i];        }
     },
    
     supply: function () {
@@ -210,8 +207,7 @@ var Lima = {
     },
     totalAmount:function(amountOfCookies) { 
         for (var i=0 ; i< this.amountOfCookies.length ;i++){
-            this.total= this.total + this.amountOfCookies[i];
-        }
+            this.total += this.amountOfCookies[i];        }
     },
    
     supply: function () {
