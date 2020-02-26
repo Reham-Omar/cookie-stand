@@ -1,5 +1,8 @@
 
-   header{
+  body {
+      background-color: gainsboro;
+  }
+  header{
   
     height:80px;
     background-color: lightsalmon;
@@ -33,6 +36,7 @@
   #contact-info{
     height:70%;
     width: 10%;
+    font-size: x-large;
     background-color:white ;
     display:inline-block;
   
@@ -48,15 +52,19 @@
     padding-top:10px;
     font-weight: lighter;
   }
-  header >div> a{
+  header nav a{
     display: inline-block;
     padding-top:10px;
     margin-right:10%;
     margin-left:2%;
     font-family: Verdana;
-  
-    font-size: 12px;
     color: black;
+  }
+
+ nav li a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration-line: none;
   }
    
   #greeting{
