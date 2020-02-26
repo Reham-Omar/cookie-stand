@@ -36,17 +36,14 @@ Cookie.prototype.amountOfCookie = function () {
 Cookie.prototype.totalAmount = function () {
     for (var i = 0; i < hours.length; i++) {
         this.total += this.amountOfCookies[i];
-        totalAmountOfCookies.push(this.total);
     };
+    totalAmountOfCookies.push(this.total);
 }
 
 
 var container = document.getElementById('SalmonCookie');
 var tableEl = document.createElement('table');
 container.appendChild(tableEl);
-
-
-
 
 
 var trEl = document.createElement('tr');
@@ -126,10 +123,9 @@ for (var i = 0; i < hours.length; i++) {
     tr6El.appendChild(tdEl);
 }
 var tdEl = document.createElement('td');
-for (var i = 0; i < hours.length; i++) {
+for (var i = 0; i < 5; i++) {
     totalOfTotal +=totalAmountOfCookies[i];
-
-    }
-    tdEl.textContent = totalOfTotal;
+}
+tdEl.textContent = totalOfTotal;
 tr6El.appendChild(tdEl);
 
