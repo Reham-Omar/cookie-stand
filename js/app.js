@@ -145,10 +145,8 @@ function addNewCookie(event) {
     var newminCustPerHour = parseInt(event.target.minCustPerHour.value);
     var newmaxCustPerHour = parseInt(event.target.maxCustPerHour.value);
     var newavgNumPerCustmer = parseInt(event.target.avgNumPerCustmer.value);
-    // New Keyword to call to function creates a new object
     new Cookie(newname, newminCustPerHour, newmaxCustPerHour, newavgNumPerCustmer);
 
-    // Access & Update text with TextContent to Table 
     tableEl.innerHTML = '';
     supplyheader();
     supplyallCookies();
