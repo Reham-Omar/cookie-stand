@@ -18,6 +18,7 @@ function Cookie(name, minCustPerHour, maxCustPerHour, avgNumPerCustmer) {
     this.custmernumber = [];
     this.total = 0;
     salamonshops.push(this);
+    this.amountOfCookie();
 
 }
 
@@ -63,12 +64,12 @@ function supplyheader() {
 // each row   
 
 Cookie.prototype.supply = function () {
-    this.amountOfCookie();
+    // this.amountOfCookie();
     this.totalAmount();
     var tr1El = document.createElement('tr');
     tableEl.appendChild(tr1El);
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < salamonshops.length; i++) {
         var tdEl = document.createElement('td');
         tdEl.textContent = this.name;
         tr1El.appendChild(tdEl);
@@ -148,13 +149,13 @@ function addNewCookie(event) {
     new Cookie(newname, newminCustPerHour, newmaxCustPerHour, newavgNumPerCustmer);
 
     tableEl.innerHTML = '';
+
     supplyheader();
     supplyallCookies();
     supplyfooter();
 }
 
-
-
 supplyheader();
 supplyallCookies();
 supplyfooter();
+
