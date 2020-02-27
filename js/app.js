@@ -7,9 +7,7 @@ function getRandomCustmer(min, max) {
 }
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var totalAmountOfCookies = []; //i will save total for each store 
-var totalOfTotal = 0;
 var salamonshops = [];
-
 
 function Cookie(name, minCustPerHour, maxCustPerHour, avgNumPerCustmer) {
     this.name = name;
@@ -43,8 +41,9 @@ Cookie.prototype.totalAmount = function () {
 var container = document.getElementById('SalmonCookie');
 var tableEl = document.createElement('table');
 container.appendChild(tableEl);
+// header
 
-function supplyheader (){
+function supplyheader() {
     var trEl = document.createElement('tr');
     tableEl.appendChild(trEl);
     var tdEl = document.createElement('td');
@@ -61,17 +60,14 @@ function supplyheader (){
     trEl.appendChild(tdEl);
 }
 
+// each row   
 
 Cookie.prototype.supply = function () {
     this.amountOfCookie();
     this.totalAmount();
-    
-
     var tr1El = document.createElement('tr');
     tableEl.appendChild(tr1El);
 
-
-    // each row   
     for (var i = 0; i < 5; i++) {
         var tdEl = document.createElement('td');
         tdEl.textContent = this.name;
@@ -87,9 +83,36 @@ Cookie.prototype.supply = function () {
         tdEl.textContent = this.total;
         tr1El.appendChild(tdEl);
     };
-
-
 };
+//footer
+function supplyfooter() {
+    var tr6El = document.createElement('tr');
+    tableEl.appendChild(tr6El);
+    var tdEl = document.createElement('td');
+    tr6El.appendChild(tdEl);
+    tdEl.textContent = 'total';
+    var totalOfTotal = 0;
+
+    for (var hr = 0; hr < hours.length; hr++) {
+        var totalPerHour = 0;
+        for (var shop = 0; shop < salamonshops.length; shop++) {
+            totalPerHour += salamonshops[shop].amountOfCookies[hr];
+
+        }
+        var tdEl = document.createElement('td');
+        tdEl.textContent = totalPerHour;
+        tr6El.appendChild(tdEl);
+
+    }
+    var tdEl = document.createElement('td');
+    for (var i = 0; i < salamonshops.length; i++) {
+        totalOfTotal += totalAmountOfCookies[i];
+    }
+    tdEl.textContent = totalOfTotal;
+    tr6El.appendChild(tdEl);
+
+}
+
 
 new Cookie('Seattle', 23, 65, 6.3);
 
@@ -105,39 +128,35 @@ new Cookie('Paris', 20, 38, 2.3);
 
 new Cookie('Lima', 2, 16, 4.6);
 
-
-
-//footer
-function supplyfooter() {
-    var tr6El = document.createElement('tr');
-    tableEl.appendChild(tr6El);
-    var tdEl = document.createElement('td');
-    tr6El.appendChild(tdEl);
-    tdEl.textContent = 'total';
-
-    for (var hr = 0; hr < hours.length; hr++) {
-        var totalPerHour = 0;
-        for (var shop = 0; shop < salamonshops.length; shop++) {
-            totalPerHour += salamonshops[shop].amountOfCookies[hr];
-
-        }
-        var tdEl = document.createElement('td');
-        tdEl.textContent =totalPerHour ;
-        tr6El.appendChild(tdEl);
-
-    }
-    var tdEl = document.createElement('td');
-    for (var i = 0; i < salamonshops.length; i++) {
-        totalOfTotal += totalAmountOfCookies[i];
-    }
-    tdEl.textContent = totalOfTotal;
-    tr6El.appendChild(tdEl);
-}
-supplyheader();
+function supplyallCookies() {
     for (var i = 0; i < salamonshops.length; i++) {
 
         salamonshops[i].supply();
     }
-   
+}
 
-   supplyfooter();
+// add new cookishop
+var cookieShopForm = document.getElementById('newShop');
+cookieShopForm.addEventListener('submit', addNewCookie);
+
+function addNewCookie(event) {
+    event.preventDefault();
+    var newname = event.target.name.value;
+    var newminCustPerHour = parseInt(event.target.minCustPerHour.value);
+    var newmaxCustPerHour = parseInt(event.target.maxCustPerHour.value);
+    var newavgNumPerCustmer = parseInt(event.target.avgNumPerCustmer.value);
+    // New Keyword to call to function creates a new object
+    new Cookie(newname, newminCustPerHour, newmaxCustPerHour, newavgNumPerCustmer);
+
+    // Access & Update text with TextContent to Table 
+    tableEl.innerHTML = '';
+    supplyheader();
+    supplyallCookies();
+    supplyfooter();
+}
+
+
+
+supplyheader();
+supplyallCookies();
+supplyfooter();

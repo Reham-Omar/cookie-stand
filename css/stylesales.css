@@ -1,9 +1,9 @@
 h2 {
-    color: red;
+    color: rgb(247, 241, 241);
     font-size: 30px;
 }
 h1{
-color: red;
+color: rgb(54, 44, 44);
 font-size: 40px;
 }
 th, td {
@@ -23,5 +23,5 @@ th, td {
     margin-top: 15px;
   }
   body {
-    background-color: tomato;
+    background-color: rgb(194, 108, 92);
   }
