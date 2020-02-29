@@ -25,3 +25,10 @@ th, td {
   body {
     background-color: rgb(194, 108, 92);
   }
+header img{
+  height: 72px;
+    float: left;
+    margin-right: 23px;
+    
+
+}
