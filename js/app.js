@@ -97,13 +97,13 @@ newcookishop.addEventListener('submit', function(event){
     var newmaxCustPerHour = parseInt(event.target.maxCustPerHour.value);
     var newavgNumPerCustmer = parseInt(event.target.avgNumPerCustmer.value);
     var newshop=new Cookie(newname, newminCustPerHour, newmaxCustPerHour, newavgNumPerCustmer);
-    if (newminCustPerHour<newavgNumPerCustmer){
+    if ( newname !=="" && newminCustPerHour<newmaxCustPerHour && newavgNumPerCustmer<newmaxCustPerHour){
         tableEl.deleteRow(tableEl.rows.length - 1);
         newshop.supply();
         supplyfooter();
     }
     else{
-        prompt("error");
+        prompt("you must enter all enteries, the MIN must be less than the MAX and the AVG between them ");
 
     }
     
