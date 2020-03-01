@@ -103,7 +103,7 @@ newcookishop.addEventListener('submit', function(event){
         supplyfooter();
     }
     else{
-        prompt("you must enter all enteries, the MIN must be less than the MAX and the AVG between them ");
+        prompt("you must enter all enteries, the MIN must be less than the MAX and the AVG between them");
 
     }
     
