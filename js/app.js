@@ -97,9 +97,16 @@ newcookishop.addEventListener('submit', function(event){
     var newmaxCustPerHour = parseInt(event.target.maxCustPerHour.value);
     var newavgNumPerCustmer = parseInt(event.target.avgNumPerCustmer.value);
     var newshop=new Cookie(newname, newminCustPerHour, newmaxCustPerHour, newavgNumPerCustmer);
-    tableEl.deleteRow(tableEl.rows.length - 1);
-    newshop.supply();
-    supplyfooter();
+    if (newminCustPerHour<newavgNumPerCustmer){
+        tableEl.deleteRow(tableEl.rows.length - 1);
+        newshop.supply();
+        supplyfooter();
+    }
+    else{
+        prompt("error");
+
+    }
+    
     });
 //footer
 function supplyfooter() {
