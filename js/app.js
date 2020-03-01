@@ -8,7 +8,6 @@ function getRandomCustmer(min, max) {
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var totalAmountOfCookies = []; //i will save total for each store 
 var salamonshops = [];
-
 var container = document.getElementById('SalmonCookie');
 var tableEl = document.createElement('table');
 container.appendChild(tableEl);
@@ -97,13 +96,13 @@ newcookishop.addEventListener('submit', function(event){
     var newmaxCustPerHour = parseInt(event.target.maxCustPerHour.value);
     var newavgNumPerCustmer = parseInt(event.target.avgNumPerCustmer.value);
     var newshop=new Cookie(newname, newminCustPerHour, newmaxCustPerHour, newavgNumPerCustmer);
-    if (newminCustPerHour<newavgNumPerCustmer){
+    if ( newname !=="" && newminCustPerHour<newmaxCustPerHour && newavgNumPerCustmer<newmaxCustPerHour){
         tableEl.deleteRow(tableEl.rows.length - 1);
         newshop.supply();
         supplyfooter();
     }
     else{
-        prompt("error");
+        prompt("you must enter all enteries, the MIN must be less than the MAX and the AVG between them");
 
     }
     
